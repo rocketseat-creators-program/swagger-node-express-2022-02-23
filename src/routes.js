@@ -22,13 +22,6 @@ module.exports = function (app) {
             return res.status(200).json(itemList);
         })
         .post((req, res) => {
-            /* #swagger.parameters['item'] = {
-                in: 'body',
-                schema: {
-                    $name: 'Dripper V60',
-                    $price: 65.5
-                }
-            } */
             const item = req.body
             if (!validateItem(item)) {
                 return res.status(400).send('Price and Name are both required')
@@ -50,13 +43,6 @@ module.exports = function (app) {
             return res.status(200).json(InMemoryDB.at(index))
         })
         .put((req, res) => {
-            /* #swagger.parameters['item'] = {
-                in: 'body',
-                schema: {
-                    $name: 'Dripper V60',
-                    $price: 65.5
-                }
-            } */
             const { id } = req.params
             const index = InMemoryDB.findIndex(item => item.id === +id)
             if (index === -1) {

@@ -1,15 +1,10 @@
 const express = require('express')
-const swaggerUi = require('swagger-ui-express')
-
-// const swaggerFile = require('../swagger.json')
-const swaggerFile = require('../swagger-output.json')
 
 const port = process.env.PORT || 3333
 const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 require('./routes')(app)
 
