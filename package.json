@@ -1,0 +1,20 @@
+{
+  "name": "node-express-swagger",
+  "version": "1.0.0",
+  "description": "Uma aplicação Node com Express documentada com Swagger",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "yarn swagger-autogen && yarn start",
+    "swagger-autogen": "node ./src/swagger.js"
+  },
+  "author": "Vinicius G. Cardozo <vinicius.gcardozo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "swagger-autogen": "^2.19.0"
+  }
+}
